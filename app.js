@@ -1,8 +1,14 @@
 const express = require("express")
+const cors = require('cors');
+const helmet = require('helmet');
+
 const app = express()
 
 // this line lets you serve static files 
 app.use(express.static("public"))
+app.use(express.json());
+app.use(helmet());
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")

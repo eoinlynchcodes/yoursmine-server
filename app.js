@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 
-app.use('/authentication', authRoutes);
+app.use('/auth', authRoutes);
 
 app.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")
@@ -22,7 +22,8 @@ app.get("/data", (req, res) => {
     res.status(200).json()
 })
 
+const PORT = 5100;
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Server is running...")
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server is running on port ${PORT}...`)
 });

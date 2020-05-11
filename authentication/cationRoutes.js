@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs');
 const cationHelpers = require('./cationHelpers');
 
 router.get('/test', (req, res) => {
-    res.status(200).json({ message: 'In cationRouter. Keep working.'})
+    res.send("<h1>Hello</h1>")
 })
 
 router.get('/allusers', (req, res) => {

@@ -6,6 +6,8 @@ const authRoutes = require('./authentication/cationRoutes');
 
 const app = express()
 
+const PORT = process.env.PORT || 3333;
+
 // this line lets you serve static files 
 app.use(express.static("public"))
 app.use(express.json());
@@ -21,8 +23,6 @@ app.get("/", (req, res) => {
 app.get("/data", (req, res) => {
     res.status(200).json()
 })
-
-const PORT = 5100;
 
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port ${PORT}...`)

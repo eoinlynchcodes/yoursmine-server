@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs');
 const cationHelpers = require('./cationHelpers');
 
 router.get('/test', (req, res) => {
-    res.send("<h1>Hello</h1>")
+    res.send("<h1>Test Passed</h1>")
 })
 
 router.get('/allusers', (req, res) => {

@@ -36,4 +36,24 @@ router.post('/register', (req, res) => {
     });
 });
 
+router.post('/login', (req, res) => {
+    let { emailAddress, password } = req.body;
+
+    cationHelpers.findBy({ emailAddress })
+    .first()
+    .then( user => {
+        if(user && bcryptjs.compareSync(password, user.password)){
+            res.status(200).json({
+                message: `Welcome ${user.username}! Next Eoin will add a token...`,
+                userID: user.id
+            })
+        } else {
+            res.status(401).json({ message: 'Invalid Credentials' });
+        }
+    })
+    .catch(error => {
+        res.status(500).json(error);
+    });
+});
+
 module.exports = router;

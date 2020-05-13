@@ -20,10 +20,10 @@ module.exports = {
     client: 'postgresql',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './database/migrations',
+      directory: './data/migrations',
     },
     seeds: {
-      directory: './database/seeds'
+      directory: './data/seeds'
     }
   },
 

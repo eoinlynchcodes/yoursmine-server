@@ -7,8 +7,6 @@ const clothesRoutes = require('../clothes/clothesRoutes');
 
 const server = express();
 
-// const PORT = process.env.PORT || 3333;
-
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
@@ -19,13 +17,5 @@ server.use('/api/clothes', clothesRoutes)
 server.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")
 });
-
-server.get("/data", (req, res) => {
-    res.status(200).json({ message: 'This is the message you have been looking for...'})
-});
-
-// server.listen(process.env.PORT || PORT, () => {
-//     console.log(`Server is running on port ${PORT}...`)
-// });
 
 module.exports = server;

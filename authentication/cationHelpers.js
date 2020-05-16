@@ -2,7 +2,7 @@ const db = require('../dbConfig');
 
 module.exports = {
     add,
-    findAll,
+    findAllUsers,
     findBy
 }
 
@@ -12,7 +12,7 @@ async function add(user){
     return db('users');
 }
 
-function findAll(){
+function findAllUsers(){
     return db('users')
 }
 

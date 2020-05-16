@@ -14,6 +14,7 @@ exports.up = function(knex) {
     .createTable('clothesOnSale', table => {
         table.increments('id');
         table.string('userID').references('id').inTable('users').notNullable();
+        table.string('gender').notNullable();
         table.string('brand').notNullable();
         table.string('condition').notNullable();
         table.string('itemType').notNullable();

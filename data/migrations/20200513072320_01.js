@@ -15,6 +15,7 @@ exports.up = function(knex) {
         table.increments('id');
         table.string('userID').references('id').inTable('users').notNullable();
         table.string('gender').notNullable();
+        table.decimal('price').notNullable();
         table.string('brand').notNullable();
         table.string('condition').notNullable();
         table.string('itemType').notNullable();

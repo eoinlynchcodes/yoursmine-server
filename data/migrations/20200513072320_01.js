@@ -13,7 +13,7 @@ exports.up = function(knex) {
   
     .createTable('clothesOnSale', table => {
         table.increments('id');
-        table.string('userID').references('id').inTable('users').notNullable();
+        table.integer('userID').references('id').inTable('users').notNullable();
         table.string('gender').notNullable();
         table.decimal('price').notNullable();
         table.string('brand').notNullable();
@@ -23,12 +23,26 @@ exports.up = function(knex) {
         table.string('description').notNullable();
         table.string('image').notNullable();
     })
+
+    .createTable('orders', table => {
+      table.increments('id');
+      table.integer('clothesItemID').references('itemid').inTable('clothesOnSale').notNullable();
+      table.string('buyerFullName').notNullable();
+      table.string('buyerAddress').notNullable();
+      table.string('buyerCity').notNullable();
+      table.string('buyerCountyOrState').notNullable();
+      table.string('buyerPostCodeOrZip').notNullable();
+      table.string('buyerCountry').notNullable();
+      table.string('buyerEmail').notNullable();
+      table.varchar('buyerPhone').notNullable();
+    })
   };
   
   exports.down = function(knex) {
     return knex.schema
     .dropTableIfExists('users')
     .dropTableIfExists('clothesOnSale')
+    .dropTableIfExists('orders')
   };
   
   

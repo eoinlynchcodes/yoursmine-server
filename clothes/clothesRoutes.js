@@ -1,16 +1,17 @@
 const router = require('express').Router();
 
-const clothesHelpers = require('./clothesHelpers');
+const ClothesHelpers = require('./clothesHelpers');
 
 router.get('/test', (req, res) => {
     res.send('<h1>Test Passed in clothes routes component.</h1>')
 });
 
 router.post('/addClothes', (req, res) => {
-    let { userID, gender, brand, condition, itemType, size, description, image } = req.body;
-    clothesHelpers.addClothes({
+    let { userID, gender, price, brand, condition, itemType, size, description, image } = req.body;
+    ClothesHelpers.addClothes({
         userID,
         gender,
+        price,
         brand,
         condition,
         itemType,
@@ -27,7 +28,7 @@ router.post('/addClothes', (req, res) => {
 });
 
 router.get('/allClothes', (req ,res) => {
-    clothesHelpers.getAllClothes()
+    ClothesHelpers.getAllClothes()
     .then(response => {
         res.status(200).json(response);
     })

@@ -1,13 +1,13 @@
 const express = require("express");
 const cors = require('cors');
 const helmet = require('helmet');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv')
 
 const authRoutes = require('../authentication/cationRoutes');
 const clothesRoutes = require('../clothes/clothesRoutes');
 // const orderRoutes = require('../orders/orderRoutes');
 
-dotenv.config();
+// dotenv.config();
 
 const server = express();
 

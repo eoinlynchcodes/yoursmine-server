@@ -8,9 +8,9 @@ module.exports = {
 async function addOrder(orderData){
     await db('orders')
     .insert(orderData, 'id')
-    return db('orders');
-};
+    return db('orders')
+}
 
 function getAllOrders(){
-    return db('orders');
-};
+    return db('orders')
+}

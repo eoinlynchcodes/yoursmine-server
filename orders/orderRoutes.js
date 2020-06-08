@@ -25,7 +25,7 @@ router.post('/new', (req, res) => {
     .catch(error => {
         res.status(500).json(error);
     })
-});
+});``
 
 router.get('/all', (req, res) => {
     OrderHelpers.getAllOrders()

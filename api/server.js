@@ -1,15 +1,12 @@
 const express = require("express");
 const cors = require('cors');
 const helmet = require('helmet');
-// const dotenv = require('dotenv')
+
+const server = express();
 
 const authRoutes = require('../authentication/cationRoutes');
 const clothesRoutes = require('../clothes/clothesRoutes');
 // const orderRoutes = require('../orders/orderRoutes');
-
-// dotenv.config();
-
-const server = express();
 
 server.use(express.json());
 server.use(helmet());

@@ -27,7 +27,7 @@ router.post('/addClothes', (req, res) => {
     });
 });
 
-router.get('/allClothes', (req ,res) => {
+router.get('/allclothes', (req ,res) => {
     ClothesHelpers.getAllClothes()
     .then(response => {
         res.status(200).json(response);

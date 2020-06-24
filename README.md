@@ -12,3 +12,5 @@ Next Steps:
 - Make registration possible(decide on backend to use, etc)
 Do something like this:
 https://dev.to/easybuoy/setting-up-a-node-api-with-postgres-and-knex-588f
+
+Break seed files into seperates

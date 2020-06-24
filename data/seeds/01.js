@@ -10,7 +10,7 @@ exports.seed = function(knex) {
         password: 'eoinpass',
         dateOfBirth: '1995-09-14'}
       ]);
-    });    
+    });   
 };
 
 
